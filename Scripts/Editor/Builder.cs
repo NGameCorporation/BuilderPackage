@@ -11,11 +11,9 @@ namespace Editor
         [MenuItem("📦Build/Android")]
         public static void BuildAndroid()
         {
-            Debug.LogError(Application.dataPath);
             string path = Application.dataPath;
             path = path.Replace($"/Assets", "");
             path = Path.Combine(path, "Build");
-            Debug.LogError(path);
             Directory.CreateDirectory(path);
 
             BuildReport report = BuildPipeline.BuildPlayer(
